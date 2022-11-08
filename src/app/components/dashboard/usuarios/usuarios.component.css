@@ -1,0 +1,26 @@
+.container{
+  margin: 10px 40px 10px 40px;
+  padding-bottom: 50px;
+}
+
+table {
+  width: 100%;
+}
+
+th{
+  width: 20%;
+}
+
+.accion-item{
+  cursor: pointer;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-toolbar{
+  display: flex;
+  justify-content: space-between;
+}

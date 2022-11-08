@@ -1,0 +1,52 @@
+<div class="container">
+  <mat-toolbar class="mat-toolbar">
+    <span>Usuarios</span>
+    <button mat-raised-button color="primary" routerLink="/dashboard/crear-usuario">AGREGAR</button>
+  </mat-toolbar>
+  <mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input autocomplete="off">
+  </mat-form-field>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="usuario">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.usuario}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="apellido">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellido </th>
+        <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="genero">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Género </th>
+        <td mat-cell *matCellDef="let element"> {{element.genero}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell style="text-align: right; width: 2%;" *matCellDef="let element; let i = index">
+          <a class="accion-item" style="color: #1f516f;" matTooltip="Editar Usuario"
+            routerLink="/dashboard/editar-usuario" (click)="indexActual(i)">
+            <mat-icon>edit</mat-icon>
+          </a>
+          <a class="accion-item" style="color: #e15639;" matTooltip="Eliminar Usuario" (click)="eliminarUsuario(i)">
+            <mat-icon>delete</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <p *ngIf="usuarios.length == 0" style="margin-left: 25px; padding-top: 18px; position: absolute;">No hay elementos
+      para mostrar</p>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
+</div>
