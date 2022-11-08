@@ -12,7 +12,6 @@ export class UsuarioService {
     {usuario: "jperes", nombre: "Juan", apellido: "Pérez", genero: "Masculino"},
     {usuario: "jperes", nombre: "Juan", apellido: "Pérez", genero: "Masculino"},
     {usuario: "jperes", nombre: "Juan", apellido: "Pérez", genero: "Masculino"},
-
   ];
 
   indexActual = 0

@@ -49,7 +49,8 @@ export class UsuariosComponent implements OnInit {
     this._snackBar.open('El usuario fue eliminado con éxito', '', {
       duration: 5000,
       horizontalPosition: 'center',
-      verticalPosition: 'bottom'
+      verticalPosition: 'bottom',
+      panelClass: ['green-snackbar']
     })
   }
 
