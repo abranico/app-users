@@ -1,10 +1,25 @@
-<mat-toolbar color="primary">
-  <span class="titulo">AppUsers</span>
-  <span class="example-spacer"></span>
-  <button mat-button *ngFor="let item of menu">{{item.nombre}}</button>
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
-    routerLink="" (click)="logout()">
-    <mat-icon>logout</mat-icon>
-  </button>
-</mat-toolbar>
+<div class="container">
+  <mat-toolbar color="primary" class="menu">
+    <span class="titulo">AppUsers</span>
+    <div>
+      <button class="menu-item" mat-button *ngFor="let item of menu">{{item.nombre}}</button>
+    </div>
+    <button mat-icon-button class="example-icon favorite-icon menu-item" routerLink="" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+    <button (click)="toggleResponsiveMenu()" mat-icon-button
+      class="example-icon favorite-icon menu-item responsive-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-toolbar color="primary" class="responsive-menu" *ngIf="responsiveMenu">
+    <div style="display: flex; flex-direction: column;">
+      <button class="responsive-button" mat-button *ngFor="let item of menu">{{item.nombre}}</button>
+    </div>
+    <button style="margin-right: -10px;" mat-icon-button class="example-icon favorite-icon" routerLink=""
+      (click)="logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>

@@ -4,29 +4,29 @@
   </mat-toolbar>
   <mat-card style="margin-top: 10px;">
     <form [formGroup]="form" (ngSubmit)="editarUsuario()">
-      <mat-grid-list cols="4" rowHeight="70px">
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-grid-list [cols]="cols" rowHeight="70px">
+        <mat-grid-tile [colspan]="colspan" [rowspan]="1">
           <mat-form-field class="ancho">
             <mat-label>Usuario</mat-label>
             <input matInput autocomplete="off" formControlName="usuario">
           </mat-form-field>
         </mat-grid-tile>
-        <mat-grid-tile [colspan]="3" [rowspan]="5">
+        <mat-grid-tile *ngIf="colspanImg" [colspan]="3" [rowspan]="5">
           <img src="./assets/img/usuario.png" width="250" height="250" alt="">
         </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-grid-tile [colspan]="colspan" [rowspan]="1">
           <mat-form-field class="ancho">
             <mat-label>Nombre</mat-label>
             <input matInput autocomplete="off" formControlName="nombre">
           </mat-form-field>
         </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-grid-tile [colspan]="colspan" [rowspan]="1">
           <mat-form-field class="ancho">
             <mat-label>Apellido</mat-label>
             <input matInput autocomplete="off" formControlName="apellido">
           </mat-form-field>
         </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-grid-tile [colspan]="colspan" [rowspan]="1">
           <mat-form-field class="ancho">
             <mat-label>Genero</mat-label>
             <mat-select formControlName="genero">
@@ -36,7 +36,7 @@
             </mat-select>
           </mat-form-field>
         </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-grid-tile [colspan]="colspan" [rowspan]="1">
           <button type="button" routerLink="/dashboard/usuarios" mat-raised-button
             style="margin-right: 20px;">Volver</button>
           <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Guardar</button>

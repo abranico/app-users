@@ -10,7 +10,7 @@ import { PermissionsGuard } from 'src/app/guards/permissions.guard';
 })
 export class NavbarComponent implements OnInit {
   menu: Menu[] = []
-
+  responsiveMenu = false
   constructor(private _menuService: MenuService, private _permissionsGuard: PermissionsGuard) { }
 
   ngOnInit(): void {
@@ -25,6 +25,10 @@ export class NavbarComponent implements OnInit {
 
   logout(){
     this._permissionsGuard.logout()
+  }
+
+  toggleResponsiveMenu(){
+    this.responsiveMenu = !this.responsiveMenu
   }
 
 }

@@ -10,7 +10,7 @@ export class UsuarioService {
     {usuario: "lionel10", nombre: "Lionel", apellido: "Messi", genero: "Masculino"},
     {usuario: "dima", nombre: "Ángel", apellido: "Di María", genero: "Masculino"},
     {usuario: "papu", nombre: "Alejandro", apellido: "Gómez", genero: "Masculino"},
-    {usuario: "paulodybala", nombre: "Paulo", apellido: "Dybala", genero: "Masculino"},
+    {usuario: "paulo", nombre: "Paulo", apellido: "Dybala", genero: "Masculino"},
     {usuario: "dibu", nombre: "Emiliano", apellido: "Martínez", genero: "Masculino"},
 
   ];

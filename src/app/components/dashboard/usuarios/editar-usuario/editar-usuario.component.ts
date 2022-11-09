@@ -26,8 +26,16 @@ export class EditarUsuarioComponent implements OnInit {
 
    }
 
-  ngOnInit(): void {
+   colspan = 1
+   colspanImg = true
+   cols = 4
 
+  ngOnInit(): void {
+    if(window.innerWidth <= 768){
+      this.cols = 6
+      this.colspan = 6
+      this.colspanImg = false
+    }
   }
 
 editarUsuario(){

@@ -1,7 +1,56 @@
+.container{
+  width: 100%;
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }
 
 .titulo{
   user-select: none;
+}
+
+.menu{
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.responsive-button{
+  display: none;
+}
+
+
+.menu-item:active{
+  background-color: rgba(26, 25, 25, 0.445);
+}
+
+@media (max-width: 500px) {
+  .menu{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu-item{
+    display: none;
+  }
+  .responsive-button{
+    display: flex;
+  }
+  .responsive-button{
+    text-align: left;
+    padding: 0 16px;
+    margin: 0;
+
+  }
+  .responsive-button:active{
+    background-color: rgba(26, 25, 25, 0.445);
+  }
+
+  .responsive-menu{
+    border-top: solid 1px black;
+    justify-content: space-between;
+    height: 130px;
+    padding-left: 0;
+  }
 }
